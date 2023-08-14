@@ -38,7 +38,6 @@ const ExploreSec4: React.FC = () => {
         throw new Error('Network response was not okay');
       }
       console.log(response.data);
-      
 
       // Update state with fetched products and clear error
       setProducts(response.data);
@@ -65,46 +64,44 @@ const ExploreSec4: React.FC = () => {
   };
 
   return (
-    <Box 
-    as={`section`} 
-    // pl={`14.375rem`} 
-    // pr={'14.3125rem'}
+    <Box
+      as={`section`}
+      // pl={`14.375rem`}
+      // pr={'14.3125rem'}
     >
       <Container>
-
-      <Box
-        display={`flex`}
-        justifyContent={`space-between`}
-        alignItems={`center`}
-        mt={`3rem`}
-        mb={`1rem`}
-      >
-        <Heading fontSize={'2xl'} fontWeight={'bold'} lineHeight={8}>
-          Most downloaded
-        </Heading>
-        <Box display={'flex'}>
-          <Image src={forwardIcon} alt='forward-icon' w={'2rem'} h={'2rem'} />
-        </Box>
-      </Box>
-
-      {/* Conditional rendering based on error state */}
-      {error ? (
-        <Box>Error: {error}</Box>
-      ) : (
         <Box
-          display={`grid`}
-          gridTemplateColumns={`repeat(4, 1fr)`}
-          justifyContent={`center`}
-          alignItems={'center'}
-          gap={`4rem`}
+          display={`flex`}
+          justifyContent={`space-between`}
+          alignItems={`center`}
+          mt={`3rem`}
+          mb={`1rem`}
         >
-          {renderCards()}
+          <Heading fontSize={'2xl'} fontWeight={'bold'} lineHeight={8}>
+            Most downloaded
+          </Heading>
+          <Box display={'flex'}>
+            <Image src={forwardIcon} alt="forward-icon" w={'2rem'} h={'2rem'} />
+          </Box>
         </Box>
-      )}
-        </Container>
+
+        {/* Conditional rendering based on error state */}
+        {error ? (
+          <Box>Error: {error}</Box>
+        ) : (
+          <Box
+            display={`grid`}
+            gridTemplateColumns={`repeat(4, 1fr)`}
+            justifyContent={`center`}
+            alignItems={'center'}
+            gap={`4rem`}
+          >
+            {renderCards()}
+          </Box>
+        )}
+      </Container>
     </Box>
   );
 };
 
 export default ExploreSec4;
-
