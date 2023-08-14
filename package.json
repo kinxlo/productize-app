@@ -2,7 +2,10 @@
   "name": "@productize-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:explore": "nx build explore",
+    "build:landing-page": "nx build landing-page"
+  },
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",
